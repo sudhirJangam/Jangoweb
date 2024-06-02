@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Jangoweb.wsgi.application'
 #    }
 #}
 
-DB_NAME = 'mongodb+srv://Mumbaistreets:Mumbaistreets@mydb.sdiiymp.mongodb.net/complaints_db'
+DB_NAME = 'mongodb+srv://<user>:<pass>@mydb.sdiiymp.mongodb.net/complaints_db'
 
 DATABASES = {
     'default': {
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'Complaints',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://Mumbaistreets:Mumbaistreets@mydb.sdiiymp.mongodb.net/complaints_db'
+            'host': 'mongodb+srv://<usr>:<pass>@mydb.sdiiymp.mongodb.net/complaints_db'
         }
     }
 }
