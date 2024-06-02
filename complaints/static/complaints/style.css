@@ -1,0 +1,254 @@
+:root {
+  --color-primary: #89a;
+  --color-primary-light: #abc;
+  --font-color-dark-bg: #fff;
+  --color-secondary: #aaa;
+  --color-secondary-light: #ccc;
+  --color-error: #B22222;
+  --color-disabled-error: #F88888;
+}
+
+a {
+color: #444;
+text-decoration: none;
+}
+
+a.active {
+padding-bottom: 5px;
+border-bottom: 2px solid #d25ca1;
+}
+
+a:visited {
+color: #444;
+}
+
+a:hover {
+color: #5cadd2;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin: -3px -8px 0 -8px;
+    padding:  15px 25px;;
+    border-bottom: 2px solid #818285;
+  }
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: -3px -8px 0 -8px;
+    padding: 8px 20px;
+  }
+
+/*the divs*/
+.parent {display: flex;}
+.parent > * { flex-basis: 100%;}
+.child {padding: 2rem;}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: -3px -8px 0 -8px;
+    padding: 8px 20px;
+  }
+
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 200px;
+  }
+
+  .filters button {
+    width: 100px;
+  }
+
+  .complaints {
+    margin: 0 20px;
+    border-bottom: 2px solid #999;
+  }
+
+  /* Product Details */
+  .complaint {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    margin-right: 40px;
+    max-width: 800px;
+  }
+
+  .complaint img {
+    width: 125px;
+  }
+
+  .complaint .complaint-info {
+    margin-left: 25px;
+    min-width: 30%;
+  }
+
+  .complaint .complaintId {
+    font-size: 22px;
+    font-weight: bold;
+    color: hsl(0, 92%, 49%);
+  }
+
+  .complaint .company {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .complaint .product {
+    font-weight: bold;
+  }
+
+
+  .complaint .text {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    justify-content: space-around;
+    align-items: left;
+    min-width: 70%;
+    color: #555;
+    border-left: 2px solid #aaa;
+    margin-left: 50px;
+    height: 250px;
+    overflow: scroll;
+  }
+
+  .complaint .actbut {
+    display: flex;
+    flex-direction: row;
+    font-size: 5px;
+    justify-content: space-around;
+    margin-right: 50%;
+    align-items: left;
+    color: #555;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+ .pages {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    margin-left: 70%;
+    margin-top: 20px;
+    justify-content: space-around;
+    padding: 8px 20px;
+  }
+
+
+button {
+font-size: 15px;
+padding: 15px 25px;
+background-color: #5cadd2;
+color: #fff;
+border: 0;
+box-shadow: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+a.button {
+font-size: 15px;
+padding: 15px 25px;
+background-color: #5cadd2;
+color: #fff;
+border: 0;
+box-shadow: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+a.inactbutton {
+font-size: 15px;
+padding: 15px 25px;
+background-color: #777;
+color: #fff;
+border: 0;
+box-shadow: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+a.button:hover {
+color: #1c6d92;
+}
+
+button:disabled {
+background-color: #777;
+}
+
+button:hover {
+color: #1c6d92;
+}
+
+button.cta {
+font-family: Arial, Helvetica, sans-serif;
+background-color: #777;
+color: #ddd;
+}
+
+button.cta:hover {
+color: #fff;
+}
+
+input {
+padding: 15px;
+font-size: 20px;
+}
+
+.button.cta:disabled {
+background-color: #f590c4;
+color: #aaa;
+}
+
+section {
+display: flex;
+}
+
+section nav {
+padding: 10px 30px 10px 0;
+background-color: var(--color-primary);
+color: var(--font-color-dark-bg);
+flex: 0 0 130px;
+border-bottom: 2px solid white;
+display: flex;
+align-items: center;
+justify-content: right;
+}
+
+section:last-child nav {
+border-bottom: none;
+}
+
+section>div {
+display: flex;
+flex-direction: column;
+padding: 10px 20px;
+flex-grow: 1;
+justify-content: center;
+}
+
+section div.flex-column {
+flex-direction: column;
+flex-grow: 1;
+justify-content: center;
+}
+
+section div input {
+max-width: 500px;
+}
+section div textarea {
+max-width: 525px;
+}
+
+section div select {
+margin: 5px 0;
+max-width: 520px;
+}

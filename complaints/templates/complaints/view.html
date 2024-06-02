@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript">
+    function getPage(page) {
+         location.replace(page);
+    }
+
+     function scrolPage(page, offset) {
+         target = page +offset;
+         if(target<0) target=0;
+         location.replace(target);
+    }
+</script>
+
+<div class="container">
+<ul class="complaints">
+    {% for complaint in dataset %}
+        <div class="complaint">
+            <div class="complaint-info">
+                <div class="complaintId">{{ complaint.complaintId }}</div>
+                <div class="product">{{ complaint.product }}</div>
+                <div class="company">{{ complaint.company }}</div>
+                <div >{{ complaint.subProduct }}</div>
+                <div >issue: {{ complaint.issue }}</div>
+                <div >cluster: {{ complaint.cluster }}</div>
+                <div class="actbut">{% csrf_token %}
+                    <button class="cta" id="updateButton" >Update</button>
+                    <script type="text/javascript">
+                        document.getElementById("updateButton").onclick = function () {
+                            location.replace("http://127.0.0.1:8000/complaint/getcomp/{{complaint.complaintId}}");
+                        };
+                    </script>
+                    <button class="cta" id="delButton" >delete</button>
+                    <script type="text/javascript">
+                        document.getElementById("delButton").onclick = function () {
+                            console.log("into del event");
+                            location.replace("http://127.0.0.1:8000/complaint/delete/{{complaint.complaintId}}");
+                        };
+                    </script>
+                </div>
+            </div>
+            <div class="text">
+                <div >{{ complaint.complaint }}</div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+ </ul>
+
+</div>
+
+<div class="pages">
+    {% if currPage > 1 %}
+    <a class="button" onclick="scrolPage({{currPage}}, -3)" >&lt;&lt;</a>
+    {% endif %}
+     {% for page in pages %}
+     {%if page.cls == 0 %}
+    <a class="inactbutton"  >{{ page.no }}</a>
+      {% else %}
+    <a class="button" onclick="getPage({{page.no}})" >{{ page.no }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if pageRemain > 3 %}
+    <a class="button"  onclick="scrolPage({{currPage}}, 3)" >&gt;&gt;</a>
+    {% endif %}
+</div>
+
+{% endblock %}
